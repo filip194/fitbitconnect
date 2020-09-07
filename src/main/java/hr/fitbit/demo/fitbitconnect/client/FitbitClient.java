@@ -52,7 +52,7 @@ public class FitbitClient {
         map.set("redirect_uri", createRedirectUri());
         map.set("code", code);
 
-        final HttpEntity<MultiValueMap<String, String>> request = new HttpEntity(map, createHeadersForToken());
+        final HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, createHeadersForToken());
 
         return restTemplate.exchange(
                 createTokenUri(),
@@ -70,7 +70,7 @@ public class FitbitClient {
         map.set("refresh_token", refreshToken);
         map.set("expires_in", String.valueOf(expiresIn));
 
-        final HttpEntity<MultiValueMap<String, String>> request = new HttpEntity(map, createHeadersForToken());
+        final HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(map, createHeadersForToken());
 
         return restTemplate.exchange(
                 createTokenUri(),
@@ -83,7 +83,7 @@ public class FitbitClient {
     // admin
     public ResponseEntity<FitbitUserActivityResponse> getUserActivities(String fitbitUserId, String token) {
 
-        final HttpEntity<MultiValueMap<String, String>> request = new HttpEntity(createHeadersForUser(token));
+        final HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(createHeadersForUser(token));
 
         return restTemplate.exchange(
                 createUserActivitiesUri(fitbitUserId),

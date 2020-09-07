@@ -1,8 +1,8 @@
 package hr.fitbit.demo.fitbitconnect.entity;
 
 import hr.fitbit.demo.fitbitconnect.apimodel.UserType;
-import hr.fitbit.demo.fitbitconnect.fixture.UserFixture;
 import hr.fitbit.demo.fitbitconnect.dao.UserRepository;
+import hr.fitbit.demo.fitbitconnect.fixture.UserFixture;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
+import java.util.HashSet;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -44,7 +44,7 @@ public class UserEntityTest {
                 "name",
                 "last_name",
                 UserType.MODERATOR,
-                Collections.EMPTY_SET
+                new HashSet<>()
         );
 
         userRepository.save(userEntity);

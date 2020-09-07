@@ -133,7 +133,7 @@ public class UserRepositoryTest {
                 "name",
                 "last_name",
                 UserType.USER,
-                Collections.EMPTY_SET
+                new HashSet<>()
         );
         final UserEntity userEntity2 = UserFixture.createUserEntity(
                 USERNAME_2,
@@ -143,7 +143,7 @@ public class UserRepositoryTest {
                 "name",
                 "last_name",
                 UserType.USER,
-                Collections.EMPTY_SET
+                new HashSet<>()
         );
         final UserEntity userEntity3 = UserFixture.createUserEntity(
                 USERNAME_3,
@@ -153,7 +153,7 @@ public class UserRepositoryTest {
                 "name",
                 "last_name",
                 UserType.USER,
-                Collections.EMPTY_SET
+                new HashSet<>()
         );
         final UserEntity userEntity4 = UserFixture.createUserEntity(
                 USERNAME_4,
@@ -163,7 +163,7 @@ public class UserRepositoryTest {
                 "name",
                 "last_name",
                 UserType.USER,
-                Collections.EMPTY_SET
+                new HashSet<>()
         );
 
         final List<UserEntity> users = new ArrayList<>(4);

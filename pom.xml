@@ -6,10 +6,10 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.2.RELEASE</version>
-        <relativePath/>
-        <!-- lookup parent from repository -->
+        <version>2.3.3.RELEASE</version>
+        <relativePath/><!-- lookup parent from repository -->
     </parent>
+
     <groupId>hr.fitbit.demo</groupId>
     <artifactId>fitbitconnect</artifactId>
     <version>1.0-FITBIT.DEMO</version>
@@ -63,10 +63,6 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-hateoas</artifactId>
         </dependency>
         <dependency>
@@ -89,6 +85,17 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <!-- OTHER -->
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -107,17 +114,6 @@
             <artifactId>xml-path</artifactId>
             <version>${rest-assured.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.restdocs</groupId>
@@ -142,12 +138,12 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.9.5</version>
+            <version>1.9.6</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -171,11 +167,6 @@
             <version>2.9.2</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>aspectj-maven-plugin</artifactId>
-            <version>1.11</version>
-        </dependency>
-        <dependency>
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock-jre8-standalone</artifactId>
             <version>2.27.0</version>
@@ -187,13 +178,6 @@
             <version>2.2.3.RELEASE</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.sun</groupId>
-            <artifactId>tools</artifactId>
-            <version>${java.version}</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/pom.xml</systemPath>
-        </dependency>
     </dependencies>
 
     <build>
@@ -202,6 +186,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!-- COMPILER PLUGIN -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-verbose</arg>
+                        <arg>-Xlint:unchecked</arg>
+                    </compilerArgs>
+                </configuration>
             </plugin>
             <!-- CHECKSTYLE -->
             <plugin>
