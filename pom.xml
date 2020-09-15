@@ -27,14 +27,6 @@
         <snippetsDirectory>${project.build.directory}/generated-snippets</snippetsDirectory>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>jcenter-snapshots</id>
-            <name>jcenter</name>
-            <url>http://oss.jfrog.org/artifactory/oss-snapshot-local/</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <!-- SPRING BOOT -->
         <dependency>
@@ -194,7 +186,7 @@
                 <version>3.8.1</version>
                 <configuration>
                     <compilerArgs>
-                        <arg>-verbose</arg>
+<!--                        <arg>-verbose</arg>-->
                         <arg>-Xlint:unchecked</arg>
                     </compilerArgs>
                 </configuration>
