@@ -1,9 +1,8 @@
 package hr.fitbit.demo.fitbitconnect.security;
 
-import hr.fitbit.demo.fitbitconnect.apimodel.UserType;
+import hr.fitbit.demo.fitbitconnect.dao.UserRepository;
 import hr.fitbit.demo.fitbitconnect.entity.RoleEntity;
 import hr.fitbit.demo.fitbitconnect.entity.UserEntity;
-import hr.fitbit.demo.fitbitconnect.dao.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -39,7 +38,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     private Collection<? extends GrantedAuthority> assignAuthoritiesToUser(UserEntity userEntity) {
-        final UserType userType = userEntity.getType();
         final Collection<UserAuthority> authorities = new HashSet<>();
 
         // by role, if edited additionally
