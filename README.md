@@ -30,14 +30,14 @@ Now, if you login as ADMIN, you can get user activity data from Fitbit for speci
 
 ### Starting application
 
-To start the application you will need to got into application.properties in application module and provide
-_fitbit.client.id_ and _fitbit.client.secret_, which you will obtain while registering you app on Fitbit Dev.
+To start the application you will need to go into application.properties in application module and provide
+_fitbit.client.id_ and _fitbit.client.secret_, which you will obtain while registering new app on Fitbit Dev.
 
 ### Documentation
 
 Documentation is automatically generated from integration tests, mostly by implementing code snippets created while
 running integration tests. This is achieved by using REST Assured and Asciidoctor.
-API documentation available at: http://localhost:9090/docs/doc_index.html.
+API documentation available at e.g.: http://localhost:9090/docs/doc_index.html.
 
 For now, docs are manually pasted into static resources.
 
